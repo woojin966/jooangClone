@@ -1,0 +1,63 @@
+/* reset */
+*{box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+html, body{font-family: 'Pretendard', 'Apple SD Sandol Gothic Neo', sans-serif; line-height: 1.2; color: var(--grayDark3);}
+article, aside, details, figcaption, figure, footer, header, main, hgroup, menu, nav, section, div, ul, ol, dl, li {position: relative; display: block; overscroll-behavior: contain;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0; width: 100%;}
+a{text-decoration: none; display: inline-block; color: inherit;}
+img{display: inline-block;}
+span, b, strong{display: inline-block;}
+button{padding: 0; border: none; background-color: transparent;}
+input, select, textarea{padding: 0; margin: 0; border: none;}
+/* input type="number" 기본 화살표 없애기 */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+input:focus, input:focus-visible{outline: none;}
+
+/* font */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+.h1{font-size: 6.389vw;}
+.h2{font-size: 5vw;}
+.h3{font-size: 1.944vw;}
+.h4{font-size: 1.528vw;}
+.text{font-size: 1.111vw;}
+.small{font-size: 0.972vw;}
+.mini{font-size: 0.833vw;}
+.n{font-weight: 400;}
+.mb{font-weight: 500;}
+.sb{font-weight: 600;}
+.b{font-weight: 700;}
+.bb{font-weight: 900;}
+@media all and (max-width: 1280px){
+    .h1{font-size: 84px;}
+.h2{font-size: 68px;}
+.h3{font-size: 28px;}
+.h4{font-size: 22px;}
+.text{font-size: 16px;}
+.small{font-size: 14px;}
+.mini{font-size: 12px;}
+.n{font-weight: 400;}
+.mb{font-weight: 500;}
+.sb{font-weight: 600;}
+.b{font-weight: 700;}
+.bb{font-weight: 900;}
+}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 480px){}
+
+/* color */
+:root{
+    --gray:#bdbdbf;
+}
+
+/* common */
+.mHide{display: none;}
+.wHide{display: block;}
+@media all and (max-width: 480px){
+    .mHide{display: block;}
+    .wHide{display: none;}
+}
