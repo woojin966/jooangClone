@@ -1,7 +1,7 @@
 // 네임스페이스 : 이벤트 이름에 추가적인 식별자를 붙여서(이벤트를 변수에 저장함) 이벤트를 구분하고 충돌과 중복을 방지하기 위함. nsScrollEnd가 네임스페이스인데, 같은 scroll이벤트가 여러군데에서 발생하더라도 서로 충돌하지 않고 독립적으로 처리하기 위함
 
 // ScrollEnd
-var ignoreScroll = false; // ignoreScroll 전역변수로 초기값 설정
+var ignoreScroll = false; // ignoreScroll 전역변수로 초기값 설정 : true이면 스크롤 이벤트 무언가를 무시하는 거 같음
 var ns = (new Date).getTime(); // 현재 시간을 밀리초 단위로 변환해 네입스페이스(nsScrollEnd)에 고유성을 부여
 var special = $.event.special; // $.event.special을 통해 jQuery에서 제공하는 특수 이벤트 기능에 접근
 var dispatch = $.event.handle || $.event.dispatch; // jQuery이벤트 핸들러를 실행하는 기본 함수
@@ -26,3 +26,24 @@ special.scrollend = {
     $(this).off(nsScrollEnd); // 해당 DOM요소에 scrollEnd 이벤트 핸들러를 제거
   }
 };
+
+// Touch Prevent
+function lockTouce(e){
+  e.stopImmediatePropagation();
+}
+
+// is Mobile
+function _isMobile(){
+  var isMobile = (/iPhone|ipod|android|balckberry|fennec/).test(navigator.userAgent.toLowerCase());
+  return isMobile;
+}
+
+// make selectbox
+function makeSelect(obj, fn) {
+  if(obj.parent().hasClass("selectStyle")){
+    return false;
+  }
+
+  // 부모 감싸기
+
+}
