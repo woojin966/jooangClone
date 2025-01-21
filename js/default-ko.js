@@ -117,7 +117,7 @@ function makeSelect(obj, fn) {
       click : function(e){
         e.preventDefault();
 
-        // 창 안쪽 높이 or 창의 높이 할당
+        // 현재 창의 보이는 영역의 높이(스크롤바 제외) or jQuery사용 창의 보이는 영역의 높이 : jQuery를 사용할 경우 후자, jQuery를 사용하지 않을 경우 전자의 값을 할당
         var windowInnerHeight = window.innerHeight || $(window).height();
         var $list = $(this).next('.selectList'); // .selectResult의 다음형제 .selectList할당
         var _this = $(this); // .selectResult
@@ -163,8 +163,22 @@ function makeSelect(obj, fn) {
         if($(this).next('.selectList').hasClass('reversal')){
           $list.removeClass('reversal'); // .selectResult 다음형제 .selectList에 클래스 reversal이 있다면, .selectList에 클래스 reversal삭ㅈ[
         } else{
-          if(windowInnerHeight > )
+          // 현재 창의 보이는 영역의 높이가 .selectTlist의 높이보다 크고, .selectResult의 스크롤 상단의 위치 + .selectResult높이 + .selectList높이 - 현재창의 스크롤이 내려간 양 보다 작을때
+          // $(this).offset().top + $(this).height() : .selectResult의 끝지점(요소의 상단위치 + 오쇼의 높이)
+          // $(this).offset().top + $(this).height() + $list.height() : .selectResult 요소의 끝에서 .selectList를 더한 값, 즉 .selectResult + .selectList 총 높이
+          // $(this).offset().top + $(this).height() + $list.height() - $(window).scrollTop : 현재 스크롤 위치를 빼면, 스크롤 된 만큼의 위치 차이를 구할 수 있음 -> 창 상단에서 .selectResult와 .selectList를 포함한 영역의 위치를 계산한 값, 이 값이 창의 보이는 영역보다 크다면 현재 보이는 영역 내에 .selectResult와 .selectList가 보이지 않음을 의미
+          // -> 현재 창의 보이는 영역이 .selectList의 높이보다 크고, .selectResult + .selectList가 포함된 영역이 현재 보이는 영역보다 밑에 있을때(보이지 않을때) : .selectResult와 .selelctList가 현재 보이는 영역내에 완전히 표시되지 않을 때를 확인
+          if(windowInnerHeight > $list.height() && $(this).offset().top + $(this).height() + $list.height() - $(window).scrollTop > windowInnerHeight){
+            $list.addClass('reversal');
+          } else {
+            $list.removeClass('reversal');
+          }
         }
+
+        // 타겟이 바깥일 경우
+        $(document).off('click.closeEvent').on('click.cloceEvent', function(e){
+
+        });
       }
     });
 
