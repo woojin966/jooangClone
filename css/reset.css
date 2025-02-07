@@ -20,32 +20,21 @@ input:focus, input:focus-visible{outline: none;}
 
 /* font */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-.h1{font-size: 6.389vw;}
-.h2{font-size: 5vw;}
-.h3{font-size: 56px;}
-.h5{font-size: 1.944vw;}
-.h6{font-size: 1.528vw;}
-.text{font-size: 1.111vw;}
-.small{font-size: 0.972vw;}
-.mini{font-size: 0.833vw;}
-.n{font-weight: 400;}
-.mb{font-weight: 500;}
-.sb{font-weight: 600;}
-.b{font-weight: 700;}
-.bb{font-weight: 900;}
-@media all and (max-width: 1280px){
-    .h1{font-size: 84px;}
+.h1{font-size: 84px;}
 .h2{font-size: 68px;}
 .h3{font-size: 28px;}
 .h4{font-size: 22px;}
 .text{font-size: 16px;}
 .small{font-size: 14px;}
 .mini{font-size: 12px;}
+.mini_s{font-size: 12px;}
 .n{font-weight: 400;}
 .mb{font-weight: 500;}
 .sb{font-weight: 600;}
 .b{font-weight: 700;}
 .bb{font-weight: 900;}
+@media all and (max-width: 1280px){
+
 }
 @media all and (max-width: 1024px){}
 @media all and (max-width: 768px){}
