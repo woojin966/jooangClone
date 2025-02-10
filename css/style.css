@@ -33,6 +33,7 @@ section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh;}
 .fake_div{width: 100%; height: 100dvh;}
 .sec1{clip-path: inset(35% 24% 35% 24%); transition: clip-path 0.5s ease; }
 .sec1 video{width: 100%; height: 100%; object-fit: cover;}
+.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 20; gap: 35%; position: fixed; transition:  all .4s ease-in-out;}
 .sec2{background-color: aqua;}
 .sec3{background-color: aquamarine;}
 .sec4{background-color: cornflowerblue;}
