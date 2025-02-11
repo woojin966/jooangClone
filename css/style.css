@@ -29,16 +29,32 @@ header{position: fixed; top: 80px; left: 80px; z-index: 9; display: flex; width:
 .lang a.on{color: #000;}
 
 /* main content */
-section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh; margin-bottom: 100dvh;}
+section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh; min-height: 968px; margin-bottom: 100dvh; z-index: 5; overflow: hidden;}
 section:first-child, section:last-child{margin-bottom: 0;}
+.section.cont{background-color: #fff;}
+.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 20; gap: 35%; position: absolute; transition:  all .4s ease-in-out; color: #000; background-color: transparent;}
 .fake_div{width: 100%; height: 200dvh;}
 .sec1{clip-path: inset(35% 24% 35% 24%); transition: clip-path 0.5s ease; }
 .sec1 video{width: 100%; height: 100%; object-fit: cover;}
-.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 20; gap: 35%; position: absolute; transition:  all .4s ease-in-out; color: #000;}
-.sec2{background-color: aqua;}
-.sec3{background-color: aquamarine;}
-.sec4{background-color: cornflowerblue;}
-.sec5{background-color: blueviolet;}
+.section.cont{display: flex;}
+.section.cont .text_box{display: flex; flex-direction: column; gap: 24px; }
+.section.cont.even .text_box{right: 0; width: 52%; padding: 200px 120px 0 200px;}
+.section.cont.odd .text_box{left: 0; width: 48%; padding: 200px 200px 0 120px;}
+.section.cont .img_box{background-color: aqua;}
+.section.cont.even .img_box{right: 0; width: 48%;}
+.section.cont.odd .img_box{left: 0; width: 52%;}
+.section.cont .img_box img{width: 100%; height: 100%; object-fit: cover;}
+
+.section.center{flex-direction: column; justify-content: space-between; align-items: center;}
+.section.center .text_box{padding: 200px 80px 0; text-align: center;}
+.section.center .img_list_box{width: 100%; height: 280px; overflow-x: auto; overflow-y: hidden;}
+.img_list_box::-webkit-scrollbar {height: 2px;}
+.img_list_box::-webkit-scrollbar-track {background-color: #E47E3C;}
+.img_list_box::-webkit-scrollbar-thumb {background-color: #000; border-radius: 0;}
+.img_list_box ul{display: flex; align-items: center; gap: 5px; width: max-content; height: 100%;}
+.section.center .showroominfo_box{display: flex; align-items: center; gap: 40px;}
+.showroominfo_box > div{display: flex; flex-direction: column; gap: 12px;}
+.showroombooking_btn{display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; width: 240px; border: 1px solid #000;}
 
 /* footer */
 footer{display: flex; flex-direction: column; gap: 120px; padding: 80px;}
