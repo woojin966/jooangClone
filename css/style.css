@@ -23,17 +23,18 @@ header{position: fixed; top: 80px; left: 80px; z-index: 9; display: flex; width:
 .navWrap{position: absolute; top: 0; right: 0; display: flex; flex-direction: column; gap: 8px; text-align: right;}
 .navWrap .menu{font-size: 28px;}
 /* utilwrap */
-.utilWrap{position: fixed; bottom: 160px; left: -44px; z-index: 9; display: flex; gap: 120px; transform: rotate(-90deg);}
+.utilWrap{position: fixed; bottom: 204px; left: -44px; z-index: 9; display: flex; gap: 40px; transform: rotate(-90deg);}
 .utilWrap .lang{display: flex; flex-direction: column; gap: 4px;}
 .lang a{color: var(--gray);}
 .lang a.on{color: #000;}
 
 /* main content */
-section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh;}
-.fake_div{width: 100%; height: 100dvh;}
+section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh; margin-bottom: 100dvh;}
+section:first-child, section:last-child{margin-bottom: 0;}
+.fake_div{width: 100%; height: 200dvh;}
 .sec1{clip-path: inset(35% 24% 35% 24%); transition: clip-path 0.5s ease; }
 .sec1 video{width: 100%; height: 100%; object-fit: cover;}
-.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 20; gap: 35%; position: fixed; transition:  all .4s ease-in-out;}
+.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 20; gap: 35%; position: absolute; transition:  all .4s ease-in-out; color: #000;}
 .sec2{background-color: aqua;}
 .sec3{background-color: aquamarine;}
 .sec4{background-color: cornflowerblue;}
