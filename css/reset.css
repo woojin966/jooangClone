@@ -20,24 +20,49 @@ input:focus, input:focus-visible{outline: none;}
 
 /* font */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-.h1{font-size: 84px;}
-.h2{font-size: 68px;}
+.h1{font-size: 4.375vw;}
+.h2{font-size: 3.542vw;}
 .h3{font-size: 40px;}
-.big{font-size: 28px;}
-.medium{font-size: 22px;}
-.text{font-size: 16px;}
-.small{font-size: 14px;}
-.mini{font-size: 12px;}
-.mini_s{font-size: 12px;}
+.big{font-size: 1.683vw;}
+.medium{font-size: 1.146vw;}
+.text{font-size: 0.833vw;}
+.small{font-size: 0.729vw;}
+.mini{font-size: 0.625vw;}
 .n{font-weight: 400;}
 .mb{font-weight: 500;}
 .sb{font-weight: 600;}
 .b{font-weight: 700;}
 .bb{font-weight: 900;}
-@media all and (max-width: 1280px){
-
+@media all and (max-width: 1440px){
+    .h1{font-size: 5.833vw;}
+    .h2{font-size: 4.722vw;}
+    .h3{font-size: 2.778vw;}
+    .big{font-size: 1.644vw;}
+    .medium{font-size: 1.528vw;}
+    .text{font-size: 1.111vw;}
+    .small{font-size: 0.972vw;}
+    .mini{font-size: 0.833vw;}
 }
-@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){
+    .h1{font-size: 6.563vw;}
+    .h2{font-size: 5.313vw;}
+    .h3{font-size: 3.125vw;}
+    .big{font-size: 2.188vw;}
+    .medium{font-size: 1.719vw;}
+    .text{font-size: 1.25vw;}
+    .small{font-size: 1.094vw;}
+    .mini{font-size: 0.938vw;}
+}
+@media all and (max-width: 1024px){
+    .h1{font-size: 8.203vw;}
+    .h2{font-size: 6.641vw;}
+    .h3{font-size: 3.906vw;}
+    .big{font-size: 2.734vw;}
+    .medium{font-size: 2.148vw;}
+    .text{font-size: 1.563vw;}
+    .small{font-size: 1.367vw;}
+    .mini{font-size: 1.172vw;}
+}
 @media all and (max-width: 768px){}
 @media all and (max-width: 480px){}
 

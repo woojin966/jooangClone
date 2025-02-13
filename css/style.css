@@ -1,77 +1,255 @@
 @import 'reset.css';
 
+body.no_scroll{overflow-y: hidden;}
+
 .body_wrapper{ width: 100%; min-height: 100dvh; font-family: 'Pretendard',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
 
-header{position: fixed; top: 80px; left: 80px; z-index: 9; display: flex; width: calc(100% - 160px);}
+header{position: fixed; top: 4.167vw; left: 4.167vw; z-index: 9; display: flex; width: calc(100% - 8.333vw);}
 /* logo, 패밀리사이트 버튼과 레어 */
-.heading{display: flex; gap: 40px;}
-.logo img{height: 24px;}
-.btnFamily{width: 16px; height: 16px;}
-.btnFamily .hover{top: 4px; left: 4px; width: 8px; height: 8px;}
-.layerFamily{position: fixed; top: 0; left: 0; z-index: 10; display: none; width: 100%; height: 100dvh; padding: 60px 80px; background-color: #fff;}
-.btnFamilyClose{width: 28px; height: 28px;}
-.layerFamlyArea{display: flex; gap: 100px; margin-top: 100px;}
-.layerFamlyArea ul{display: flex; flex-direction: column; gap: 20px;}
-.layerFamlyArea .family{font-size: 60px;}
+.heading{display: flex; gap: 2.083vw;}
+.logo img{height: 1.25vw;}
+.ham_btn{width: 0.833vw; height: 0.833vw;}
+.ham_btn .hover{top: 0.208vw; left: 0.208vw; width: 0.417vw; height: 0.417vw;}
+/* menu layer */
+.layerMenu{position: fixed; top: 0; left: 0; z-index: 10; display: none; width: 100%; height: 100dvh; padding: 3.125vw 4.167vw; background-color: #fff;}
+.layerMenu.on{display: block;}
+.btnMenu_close{width: 1.25vw; height: 1.25vw;}
+.layerMenu_area{display: flex; gap: 5.208vw; margin-top: 5.208vw;}
+.menu_list{display: flex; flex-direction: column; gap: 1.042vw;}
+.menu_list ul{display: flex; flex-direction: column; gap: 0.625vw; margin-top: 1.042vw;}
+
 /* gnb */
-.titleNavBox{display: flex; gap: 40px; margin-left: 160px;}
+.titleNavBox{display: flex; gap: 2.083vw; margin-left: 8.333vw;}
 .titleNavBox .nav{position: relative; color: var(--gray); transition: all ease-out .2s;}
 .titleNavBox .nav:hover{color: #000; }
 .titleNavBox .nav::before{content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #000; }
 /* rnb */
 .titleNavBox .nav:hover::before{width: 100%;}
-.navWrap{position: absolute; top: 0; right: 0; display: flex; flex-direction: column; gap: 8px; text-align: right;}
-.navWrap .menu{font-size: 28px;}
+.navWrap{position: absolute; top: 0; right: 0; display: flex; flex-direction: column; gap: 0.417vw; text-align: right;}
+.navWrap .menu{font-size: 1.458vw;}
 /* utilwrap */
-.utilWrap{position: fixed; bottom: 204px; left: -44px; z-index: 9; display: flex; gap: 40px; transform: rotate(-90deg);}
-.utilWrap .lang{display: flex; flex-direction: column; gap: 4px;}
+.utilWrap{position: fixed; bottom: 10.625vw; left: -2.292vw; z-index: 9; display: flex; gap: 2.083vw; transform: rotate(-90deg);}
+.utilWrap .lang{display: flex; flex-direction: column; gap: 0.208vw;}
 .lang a{color: var(--gray);}
 .lang a.on{color: #000;}
 
 /* main content */
-section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh; min-height: 968px; margin-bottom: 100dvh; z-index: 5; overflow: hidden;}
+section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh; min-height: 50.417vw; margin-bottom: 100dvh; z-index: 5; overflow: hidden;}
 section:first-child, section:last-child{margin-bottom: 0;}
 .section.cont{background-color: #fff;}
-.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 20; gap: 35%; position: absolute; transition:  all .4s ease-in-out; color: #000; background-color: transparent;}
+.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 8; gap: 35%; position: absolute; transition:  all .4s ease-in-out; color: #000; background-color: transparent;}
 .fake_div{width: 100%; height: 200dvh;}
 .sec1{clip-path: inset(35% 24% 35% 24%); transition: clip-path 0.5s ease; }
 .sec1 video{width: 100%; height: 100%; object-fit: cover;}
 .section.cont{display: flex;}
-.section.cont .text_box{display: flex; flex-direction: column; gap: 24px; }
-.section.cont.even .text_box{right: 0; width: 52%; padding: 200px 120px 0 200px;}
-.section.cont.odd .text_box{left: 0; width: 48%; padding: 200px 200px 0 120px;}
-.section.cont .img_box{background-color: aqua;}
+.section.cont .text_box{display: flex; flex-direction: column; gap: 1.25vw; }
+.section.cont.even .text_box{right: 0; width: 52%; padding: 10.417vw 6.25vw 0 10.417vw;}
+.section.cont.odd .text_box{left: 0; width: 48%; padding: 10.417vw 10.417vw 0 6.25vw;}
 .section.cont.even .img_box{right: 0; width: 48%;}
 .section.cont.odd .img_box{left: 0; width: 52%;}
 .section.cont .img_box img{width: 100%; height: 100%; object-fit: cover;}
 
-.section.ohter{flex-direction: column;}
-
+.section.other{flex-direction: column; gap: 5.208vw;}
+.section.other .text_box{padding: 10.417vw 6.25vw 0; gap: 0.625vw;}
+.card_box{padding: 0 7.292vw;}
+.card_box ul{display: flex; justify-content: flex-end; gap: 1.042vw;}
+.card_box li{display: flex; flex-direction: column; gap: 1.042vw; border-top: 1px solid #000; width: 20%;}
+.card_box li > p{margin-top: 0.625vw;}
+.card_box li img{margin-top: 0.417vw; width: 100%; height: 11.458vw; object-fit: cover;}
+.card_box li:first-child img{object-position: center 44%;}
+.card_box li:nth-child(2) img{object-position: center 40%;}
 
 .section.center{flex-direction: column; justify-content: space-between; align-items: center;}
-.section.center .text_box{padding: 200px 80px 0; text-align: center;}
-.section.center .img_list_box{width: 100%; height: 280px; overflow-x: auto; overflow-y: hidden;}
+.section.center .text_box{padding: 10.417vw 4.167vw 0; text-align: center;}
+.section.center .img_list_box{width: 100%; height: 14.583vw; overflow-x: auto; overflow-y: hidden;}
 .img_list_box::-webkit-scrollbar {height: 2px;}
 .img_list_box::-webkit-scrollbar-track {background-color: #E47E3C;}
 .img_list_box::-webkit-scrollbar-thumb {background-color: #000; border-radius: 0;}
-.img_list_box ul{display: flex; align-items: center; gap: 5px; width: max-content; height: 100%;}
-.section.center .showroominfo_box{display: flex; align-items: center; gap: 40px;}
-.showroominfo_box > div{display: flex; flex-direction: column; gap: 12px;}
-.showroombooking_btn{display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; width: 240px; border: 1px solid #000;}
+.img_list_box ul{display: flex; align-items: center; gap: 0.26vw; width: max-content; height: 100%;}
+.section.center .showroominfo_box{display: flex; align-items: center; gap: 2.083vw;}
+.showroominfo_box > div{display: flex; flex-direction: column; gap: 0.625vw;}
+.showroombooking_btn{display: flex; align-items: center; justify-content: center; gap: 0.417vw; padding: 0.625vw 1.042vw; width: 12.5vw; border: 1px solid #000;}
 
 /* footer */
-footer{display: flex; flex-direction: column; gap: 120px; padding: 80px;}
-.footerMenu{display: flex; gap: 100px;}
-strong.dep1{margin-bottom: 12px;}
+footer{display: flex; flex-direction: column; gap: 6.25vw; padding: 4.167vw;}
+.footerMenu{display: flex; gap: 5.208vw;}
+strong.dep1{margin-bottom: 0.625vw;}
 .footerBtm{display: flex; justify-content: space-between; align-items: flex-start;}
-.footerCopy{display: flex; gap: 20px; align-items: flex-end;}
-.footerCopy .logo img{width: auto; height: 34px; margin-bottom: 4px;}
-.footerEtc{display: flex; flex-wrap: wrap; width: 40%; gap: 8px 12px;}
+.footerCopy{display: flex; gap: 1.042vw; align-items: flex-end;}
+.footerCopy .logo img{width: auto; height: 1.771vw; margin-bottom: 0.208vw;}
+.footerEtc{display: flex; flex-wrap: wrap; width: 40%; gap: 0.417vw 0.625vw;}
 
-@media all and (max-width: 1280px){
+@media all and (max-width: 1440px){
+    header{top: 80px; left: 80px; width: calc(100% - 160px);}
+    /* logo, 패밀리사이트 버튼과 레어 */
+    .heading{gap: 40px;}
+    .logo img{height: 24px;}
+    .ham_btn{width: 16px; height: 16px;}
+    .ham_btn .hover{top: 4px; left: 4px; width: 8px; height: 8px;}
+    /* menu layer */
+    .layerMenu{min-width: 968px; padding: 60px 80px;}
+    .btnMenu_close{width: 24px; height: 24px;}
+    .layerMenu_area{gap: 100px; margin-top: 100px;}
+    .menu_list{gap: 20px;}
+    .menu_list ul{gap: 12px; margin-top: 20px;}
 
+    /* gnb */
+    .titleNavBox{gap: 40px; margin-left: 160px;}
+    /* rnb */
+    .navWrap{gap: 8px;}
+    .navWrap .menu{font-size: 28px;}
+    /* utilwrap */
+    .utilWrap{bottom: 204px; left: -44px; gap: 40px;}
+    .utilWrap .lang{gap: 4px;}
+
+    /* main content */
+    section{min-height: 968px;}
+    .sec1{clip-path: inset(35% 24% 35% 24%);}
+
+    .section.cont .text_box{gap: 24px; }
+    .section.cont.even .text_box{width: 52%; padding: 200px 120px 0 200px;}
+    .section.cont.odd .text_box{width: 48%; padding: 200px 200px 0 120px;}
+    .section.cont.even .img_box{width: 48%;}
+    .section.cont.odd .img_box{width: 52%;}
+
+    .section.other{gap: 100px;}
+    .section.other .text_box{padding: 200px 120px 0; gap: 12px;}
+    .card_box{padding: 0 140px;}
+    .card_box ul{gap: 20px;}
+    .card_box li{gap: 20px; width: 20%;}
+    .card_box li > p{margin-top: 12px;}
+    .card_box li img{margin-top: 8px; height: 220px;}
+    .card_box li:first-child img{object-position: center 44%;}
+    .card_box li:nth-child(2) img{object-position: center 40%;}
+
+    .section.center .text_box{padding: 200px 80px 0;}
+    .section.center .img_list_box{height: 280px}
+    .section.center .showroominfo_box{gap: 40px;}
+    .showroominfo_box > div{gap: 12px;}
+    .showroombooking_btn{gap: 8px; padding: 12px 20px; width: 240px;}
+
+    /* footer */
+    footer{gap: 120px; padding: 80px;}
+    .footerMenu{gap: 100px;}
+    strong.dep1{margin-bottom: 12px;}
+    .footerCopy{gap: 20px;}
+    .footerCopy .logo img{height: 34px; margin-bottom: 4px;}
+    .footerEtc{width: 40%; gap: 8px 12px;}
 }
-@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){
+    header{top: 80px; left: 80px; width: calc(100% - 160px);}
+    /* logo, 패밀리사이트 버튼과 레어 */
+    .heading{gap: 40px;}
+    .logo img{height: 24px;}
+    .ham_btn{width: 16px; height: 16px;}
+    .ham_btn .hover{top: 4px; left: 4px; width: 8px; height: 8px;}
+    /* menu layer */
+    .layerMenu{min-width: 968px; padding: 60px 80px;}
+    .btnMenu_close{width: 24px; height: 24px;}
+    .layerMenu_area{gap: 100px; margin-top: 100px;}
+    .menu_list{gap: 20px;}
+    .menu_list ul{gap: 12px; margin-top: 20px;}
+
+    /* gnb */
+    .titleNavBox{gap: 40px; margin-left: 160px;}
+    /* rnb */
+    .navWrap{gap: 8px;}
+    .navWrap .menu{font-size: 28px;}
+    /* utilwrap */
+    .utilWrap{bottom: 204px; left: -44px; gap: 40px;}
+    .utilWrap .lang{gap: 4px;}
+
+    /* main content */
+    section{min-height: 968px;}
+    .sec1{clip-path: inset(35% 24% 35% 24%);}
+
+    .section.cont .text_box{gap: 24px; }
+    .section.cont.even .text_box{width: 52%; padding: 200px 120px 0 200px;}
+    .section.cont.odd .text_box{width: 48%; padding: 200px 200px 0 120px;}
+    .section.cont.even .img_box{width: 48%;}
+    .section.cont.odd .img_box{width: 52%;}
+
+    .section.other{gap: 100px;}
+    .section.other .text_box{padding: 200px 120px 0; gap: 12px;}
+    .card_box{padding: 0 140px;}
+    .card_box ul{gap: 20px;}
+    .card_box li{gap: 20px; width: 20%;}
+    .card_box li > p{margin-top: 12px;}
+    .card_box li img{margin-top: 8px; height: 220px;}
+    .card_box li:first-child img{object-position: center 44%;}
+    .card_box li:nth-child(2) img{object-position: center 40%;}
+
+    .section.center .text_box{padding: 200px 80px 0;}
+    .section.center .img_list_box{height: 280px}
+    .section.center .showroominfo_box{gap: 40px;}
+    .showroominfo_box > div{gap: 12px;}
+    .showroombooking_btn{gap: 8px; padding: 12px 20px; width: 240px;}
+
+    /* footer */
+    footer{gap: 120px; padding: 80px;}
+    .footerMenu{gap: 100px;}
+    strong.dep1{margin-bottom: 12px;}
+    .footerCopy{gap: 20px;}
+    .footerCopy .logo img{height: 34px; margin-bottom: 4px;}
+    .footerEtc{width: 40%; gap: 8px 12px;}
+}
+@media all and (max-width: 1024px){
+    header{top: 80px; left: 80px; width: calc(100% - 160px);}
+    /* logo, 패밀리사이트 버튼과 레어 */
+    .heading{gap: 40px;}
+    .logo img{height: 24px;}
+    .ham_btn{width: 16px; height: 16px;}
+    .ham_btn .hover{top: 4px; left: 4px; width: 8px; height: 8px;}
+    /* menu layer */
+    .layerMenu{min-width: 968px; padding: 60px 80px;}
+    .btnMenu_close{width: 24px; height: 24px;}
+    .layerMenu_area{gap: 100px; margin-top: 100px;}
+    .menu_list{gap: 20px;}
+    .menu_list ul{gap: 12px; margin-top: 20px;}
+
+    /* gnb */
+    .titleNavBox{gap: 40px; margin-left: 160px;}
+    /* rnb */
+    .navWrap{gap: 8px;}
+    .navWrap .menu{font-size: 28px;}
+    /* utilwrap */
+    .utilWrap{bottom: 204px; left: -44px; gap: 40px;}
+    .utilWrap .lang{gap: 4px;}
+
+    /* main content */
+    section{min-height: 968px;}
+    .sec1{clip-path: inset(35% 24% 35% 24%);}
+
+    .section.cont .text_box{gap: 24px; }
+    .section.cont.even .text_box{width: 52%; padding: 200px 120px 0 200px;}
+    .section.cont.odd .text_box{width: 48%; padding: 200px 200px 0 120px;}
+    .section.cont.even .img_box{width: 48%;}
+    .section.cont.odd .img_box{width: 52%;}
+
+    .section.other{gap: 100px;}
+    .section.other .text_box{padding: 200px 120px 0; gap: 12px;}
+    .card_box{padding: 0 140px;}
+    .card_box ul{gap: 20px;}
+    .card_box li{gap: 20px; width: 20%;}
+    .card_box li > p{margin-top: 12px;}
+    .card_box li img{margin-top: 8px; height: 220px;}
+    .card_box li:first-child img{object-position: center 44%;}
+    .card_box li:nth-child(2) img{object-position: center 40%;}
+
+    .section.center .text_box{padding: 200px 80px 0;}
+    .section.center .img_list_box{height: 280px}
+    .section.center .showroominfo_box{gap: 40px;}
+    .showroominfo_box > div{gap: 12px;}
+    .showroombooking_btn{gap: 8px; padding: 12px 20px; width: 240px;}
+
+    /* footer */
+    footer{gap: 120px; padding: 80px;}
+    .footerMenu{gap: 100px;}
+    strong.dep1{margin-bottom: 12px;}
+    .footerCopy{gap: 20px;}
+    .footerCopy .logo img{height: 34px; margin-bottom: 4px;}
+    .footerEtc{width: 40%; gap: 8px 12px;}
+}
 @media all and (max-width: 768px){}
 @media all and (max-width: 480px){}
 @media all and (max-width: 360px){}

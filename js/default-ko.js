@@ -1,4 +1,13 @@
 $(document).ready(function() {
+    $('.ham_btn').on('click', function(){
+        $('.layerMenu').addClass('on');
+        $('body').addClass('no_scroll');
+    });
+    $('.btnMenu_close').on('click', function(){
+        $('.layerMenu').removeClass('on');
+        $('body').removeClass('no_scroll');
+    });
+
     $('.layer').css({'color' : '#000'});
     $(window).scroll(function() {
         // sec1의 높이
