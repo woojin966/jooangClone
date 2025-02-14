@@ -27,10 +27,10 @@ $(document).ready(function() {
         var insetRight = (21 - (21 * scrollRatio)) + "%";
         var layerGap = (35 - (35 * scrollRatio)) + "%";
         if($(window).width() <= 1440){
-            var insetTop = (36 - (36 * scrollRatio)) + "%";
-            var insetBottom = (36 - (36 * scrollRatio)) + "%";
+            var insetTop = (35 - (35 * scrollRatio)) + "%";
+            var insetBottom = (35 - (35 * scrollRatio)) + "%";
             var insetLeft = (24 - (24 * scrollRatio)) + "%";
-            var insetRight = (20 - (20 * scrollRatio)) + "%";
+            var insetRight = (21 - (21 * scrollRatio)) + "%";
             var layerGap = (32 - (32 * scrollRatio)) + "%";
         }
         if($(window).width() <= 1024){

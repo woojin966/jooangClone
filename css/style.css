@@ -159,7 +159,6 @@ strong.dep1{margin-bottom: 0.625vw;}
 
     /* main content */
     section{min-height: 800px;}
-    .sec1{clip-path: inset(35% 24% 35% 24%);}
 
     .section.cont .text_box{gap: 24px; }
     .section.cont.even .text_box{width: 60%; padding: 180px 56px 0 160px;}
@@ -168,14 +167,14 @@ strong.dep1{margin-bottom: 0.625vw;}
     .section.cont.odd .img_box{width: 40%;}
 
     .section.other{gap: 60px;}
-    .section.other .text_box{padding: 160px 140px 0; gap: 12px;}
+    .section.other .text_box{padding: 140px 140px 0; gap: 12px;}
     .card_box{padding: 0 100px 60px;}
     .card_box ul{gap: 20px;}
     .card_box li{gap: 20px; width: 26%;}
     .card_box li > p{margin-top: 12px;}
     .card_box li img{margin-top: 8px; height: 180px;}
 
-    .section.center .text_box{padding: 120px 60px 0;}
+    .section.center .text_box{padding: 140px 60px 0;}
     .section.center .img_list_box{height: 240px}
     .section.center .showroominfo_box{gap: 40px;}
     .showroominfo_box > div{gap: 12px;}
@@ -190,50 +189,47 @@ strong.dep1{margin-bottom: 0.625vw;}
     .footerEtc{width: 40%; gap: 8px 12px;}
 }
 @media all and (max-width: 1024px){
-    header{top: 80px; left: 80px; width: calc(100% - 160px);}
+    header{top: 60px; left: 60px; width: calc(100% - 120px);}
     /* logo, 패밀리사이트 버튼과 레어 */
     .heading{gap: 40px;}
     .logo img{height: 24px;}
     .ham_btn{width: 16px; height: 16px;}
     .ham_btn .hover{top: 4px; left: 4px; width: 8px; height: 8px;}
     /* menu layer */
-    .layerMenu{min-width: 968px; padding: 60px 80px;}
+    .layerMenu{min-width: 800px; padding: 60px 80px;}
     .btnMenu_close{width: 24px; height: 24px;}
     .layerMenu_area{gap: 100px; margin-top: 100px;}
     .menu_list{gap: 20px;}
     .menu_list ul{gap: 12px; margin-top: 20px;}
 
     /* gnb */
-    .titleNavBox{gap: 40px; margin-left: 160px;}
+    .titleNavBox{gap: 40px; margin-left: 120px;}
     /* rnb */
     .navWrap{gap: 8px;}
     .navWrap .menu{font-size: 28px;}
     /* utilwrap */
-    .utilWrap{bottom: 204px; left: -44px; gap: 40px;}
+    .utilWrap{bottom: 204px; left: -64px; gap: 40px;}
     .utilWrap .lang{gap: 4px;}
 
     /* main content */
-    section{min-height: 968px;}
-    .sec1{clip-path: inset(36% 24% 35% 24%);}
+    section{min-height: 800px;}
 
     .section.cont .text_box{gap: 24px; }
-    .section.cont.even .text_box{width: 52%; padding: 200px 120px 0 200px;}
-    .section.cont.odd .text_box{width: 48%; padding: 200px 200px 0 120px;}
-    .section.cont.even .img_box{width: 48%;}
-    .section.cont.odd .img_box{width: 52%;}
+    .section.cont.even .text_box{width: 60%; padding: 180px 56px 0 160px;}
+    .section.cont.odd .text_box{width: 60%; padding: 180px 160px 0 56px;}
+    .section.cont.even .img_box{width: 40%;}
+    .section.cont.odd .img_box{width: 40%;}
 
-    .section.other{gap: 100px;}
-    .section.other .text_box{padding: 200px 120px 0; gap: 12px;}
-    .card_box{padding: 0 140px;}
+    .section.other{gap: 60px;}
+    .section.other .text_box{padding: 140px 140px 0; gap: 12px;}
+    .card_box{padding: 0 100px 60px;}
     .card_box ul{gap: 20px;}
-    .card_box li{gap: 20px; width: 20%;}
+    .card_box li{gap: 20px; width: 26%;}
     .card_box li > p{margin-top: 12px;}
-    .card_box li img{margin-top: 8px; height: 220px;}
-    .card_box li:first-child img{object-position: center 44%;}
-    .card_box li:nth-child(2) img{object-position: center 40%;}
+    .card_box li img{margin-top: 8px; height: 180px;}
 
-    .section.center .text_box{padding: 200px 80px 0;}
-    .section.center .img_list_box{height: 280px}
+    .section.center .text_box{padding: 140px 60px 0;}
+    .section.center .img_list_box{height: 240px}
     .section.center .showroominfo_box{gap: 40px;}
     .showroominfo_box > div{gap: 12px;}
     .showroombooking_btn{gap: 8px; padding: 12px 20px; width: 240px;}
@@ -243,6 +239,7 @@ strong.dep1{margin-bottom: 0.625vw;}
     .footerMenu{gap: 100px;}
     strong.dep1{margin-bottom: 12px;}
     .footerCopy{gap: 20px;}
+
     .footerCopy .logo img{height: 34px; margin-bottom: 4px;}
     .footerEtc{width: 40%; gap: 8px 12px;}
 }
