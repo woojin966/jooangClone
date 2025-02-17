@@ -36,9 +36,13 @@ $(document).ready(function() {
         if($(window).width() <= 1024){
             var insetTop = (38 - (38 * scrollRatio)) + "%";
             var insetBottom = (38 - (38 * scrollRatio)) + "%";
-            var insetLeft = (16 - (16 * scrollRatio)) + "%";
-            var insetRight = (12 - (12 * scrollRatio)) + "%";
+            var insetLeft = (0 - (0 * scrollRatio)) + "%";
+            var insetRight = (0 - (0 * scrollRatio)) + "%";
             var layerGap = (28 - (28 * scrollRatio)) + "%";
+            if($(window).height() <= 600){
+                var insetLeft = (16 - (16 * scrollRatio)) + "%";
+                var insetRight = (12 - (12 * scrollRatio)) + "%";
+            }
         }
         if($(window).width() <= 840){
             var insetTop = (40 - (40 * scrollRatio)) + "%";
@@ -68,6 +72,7 @@ $(document).ready(function() {
                 $('.utilWrap').css({'left' : '-4.167vw', 'transition' : 'all 1s ease-in-out'});
             }
             if($(window).width() <= 1024){
+                $('.utilWrap').css({'left' : '-6.25vw', 'transition' : 'all 1s ease-in-out'});
             }
         }
     });
@@ -85,4 +90,16 @@ $(document).ready(function() {
 
     // 비디오가 로드될 때 자동으로 재생 시작
     document.querySelector('#intro').play();
+
+    // 마우스 휠로 수평 스크롤 구현
+    const scrollContainer = document.querySelector('.img_list_box');
+
+    scrollContainer.addEventListener('wheel', function(e) {
+      // 수평 스크롤은 'deltaX' 값으로, 수직 스크롤은 'deltaY' 값으로 나타남
+      if (e.deltaY === 0) {  // 수직 휠이 아니라면
+        scrollContainer.scrollLeft += e.deltaX;  // 수평 스크롤
+      } else if (e.deltaX === 0) {  // 수평 휠이 아니라면
+        scrollContainer.scrollLeft += e.deltaY;  // 수직 휠을 가로 스크롤로 변환
+      }
+    });
 });

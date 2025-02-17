@@ -54,14 +54,14 @@ input:focus, input:focus-visible{outline: none;}
     .mini{font-size: 0.938vw;}
 }
 @media all and (max-width: 1024px){
-    .h1{font-size: 8.203vw;}
-    .h2{font-size: 6.641vw;}
-    .h3{font-size: 3.906vw;}
-    .big{font-size: 2.734vw;}
-    .medium{font-size: 2.148vw;}
-    .text{font-size: 1.563vw;}
-    .small{font-size: 1.367vw;}
-    .mini{font-size: 1.172vw;}
+    .h1{font-size: 7.203vw;}
+    .h2{font-size: 5.641vw;}
+    .h3{font-size: 2.906vw;}
+    .big{font-size: 2.534vw;}
+    .medium{font-size: 1.748vw;}
+    .text{font-size: 1.163vw;}
+    .small{font-size: 0.967vw;}
+    .mini{font-size: 0.772vw;}
 }
 @media all and (max-width: 768px){}
 @media all and (max-width: 480px){}
