@@ -10,12 +10,10 @@ $(document).ready(function() {
 
     $('.layer').css({'color' : '#000'});
     $(window).scroll(function() {
-        // sec1의 높이
-        var sec1Height = $('.sec1').height();
-        // 현재 스크롤 위치
-        var scrollPosition = $(this).scrollTop();
-        // footer의 상단 위치
-        var footerOffset = $('footer').offset().top;
+        var scrollPosition = $(this).scrollTop(); // 현재 스크롤 위치
+        var sec1Height = $('.sec1').height(); // sec1의 높이
+        var footerOffset = $('footer').offset().top; // footer의 상단 위치
+        var windowHeight = $(window).height(); // 윈도우 높이
 
         // 스크롤 비율 (0~1 범위로 스케일링)
         var scrollRatio = Math.min(scrollPosition / sec1Height, 1);
@@ -49,7 +47,7 @@ $(document).ready(function() {
             var insetBottom = (40 - (40 * scrollRatio)) + "%";
             var insetLeft = (0 - (0 * scrollRatio)) + "%";
             var insetRight = (0 - (0 * scrollRatio)) + "%";
-            var layerGap = (28 - (28 * scrollRatio)) + "%";
+            var layerGap = (24 - (24 * scrollRatio)) + "%";
         }
 
         if (scrollRatio == 1) {
@@ -59,9 +57,57 @@ $(document).ready(function() {
             var color = 'rgb(' + (0 + colorValue) + ',' + (0 + colorValue) + ',' + (0 + colorValue) + ')';
             $('.layer').css({'position' : 'fixed', 'visibility' : 'visible', 'opacity': '1', 'color': color}); // opacity 1, color 서서히 변화
         }
+
         // 새로운 clip-path 값 적용
         $('.sec1').css('clip-path', 'inset(' + insetTop + ' ' + insetRight + ' ' + insetBottom + ' ' + insetLeft + ')');
         $('.layer').css({'gap' : layerGap});
+
+
+
+        // $('.section').each(function() {
+        //     var $this = $(this);
+        //     var offset = $this.offset().top; // .section의 상단 위치
+
+        //     // .section이 화면에 등장할 때 (스크롤 내리거나 올리면서 화면에 등장)
+        //     if (scrollPosition + windowHeight - 50 > offset && scrollPosition < offset + $this.outerHeight() + 50) {
+        //       if (!$this.hasClass('active')) {
+        //         $('.section.active').removeClass('active');
+        //         $this.addClass('active'); // active 클래스를 추가하여 애니메이션 시작
+        //       }
+        //     } else {
+        //       if ($this.hasClass('active')) {
+        //         $this.removeClass('active'); // active 클래스를 제거
+        //       }
+        //     }
+        //   });
+        $('.section').each(function() {
+            var $this = $(this);
+            var offset = $this.offset().top; // .section의 상단 위치
+            var sectionHeight = $this.outerHeight(); // .section의 높이
+
+            // .section이 화면에 나타날 때 (스크롤 내리거나 올리면서)
+            if (scrollPosition + windowHeight - 800 > offset && scrollPosition < offset + sectionHeight + 800) {
+              // 이전 .section의 active 클래스를 제거할 조건
+              if (!$this.hasClass('active')) {
+                // 다음 .section이 화면에 일정 부분 가리면 이전 .section의 active 클래스를 제거
+                $('.section.active').each(function() {
+                  var $active = $(this);
+                  var activeOffset = $active.offset().top;
+
+                  // 현재 .section이 다음 .section보다 화면에 더 위에 있으면 active 클래스를 제거
+                  if (scrollPosition + windowHeight > activeOffset + 800) {
+                    $active.removeClass('active');
+                  }
+                });
+                $this.addClass('active'); // active 클래스를 추가하여 애니메이션 시작
+              }
+            } else {
+              // .section이 화면에서 사라지면 active 클래스를 제거
+              if ($this.hasClass('active')) {
+                $this.removeClass('active');
+              }
+            }
+          });
 
         // footer 상단에 도달하면 .utilWrap을 왼쪽으로 숨기기
         if (scrollPosition + $(window).height() >= footerOffset) {
