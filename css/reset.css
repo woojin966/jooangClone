@@ -59,12 +59,26 @@ input:focus, input:focus-visible{outline: none;}
     .h3{font-size: 2.906vw;}
     .big{font-size: 2.534vw;}
     .medium{font-size: 1.748vw;}
-    .text{font-size: 1.163vw;}
-    .small{font-size: 0.967vw;}
-    .mini{font-size: 0.772vw;}
+    .text{font-size: 1.6vw;}
+    .small{font-size: 1.4vw;}
+    .mini{font-size: 1.3vw;}
 }
-@media all and (max-width: 768px){}
-@media all and (max-width: 480px){}
+@media all and (max-width: 768px){
+    .medium{font-size: 1.948vw;}
+    .text{font-size: 1.8vw;}
+    .small{font-size: 1.6vw;}
+    .mini{font-size: 1.5vw;}
+}
+@media all and (max-width: 480px){
+    .h1{font-size: 8.203vw;}
+    .h2{font-size: 6.641vw;}
+    .h3{font-size: 3.906vw;}
+    .big{font-size: 3.534vw;}
+    .medium{font-size: 2.748vw;}
+    .text{font-size: 2.6vw;}
+    .small{font-size: 2.4vw;}
+    .mini{font-size: 2.3vw;}
+}
 
 /* color */
 :root{
