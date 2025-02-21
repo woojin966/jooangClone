@@ -75,7 +75,7 @@ $(document).ready(function() {
         var sectionHeight = $this.outerHeight(); // .section의 높이
 
         // .section이 화면에 나타날 때 (스크롤 내리거나 올리면서)
-        if (scrollPosition + windowHeight - 600 > offset && scrollPosition < offset + sectionHeight + 600) {
+        if (scrollPosition + windowHeight - 500 > offset && scrollPosition < offset + sectionHeight + 500) {
           // 이전 .section의 active 클래스를 제거할 조건
           if (!$this.hasClass('active')) {
             // 다음 .section이 화면에 일정 부분 가리면 이전 .section의 active 클래스를 제거
@@ -84,7 +84,7 @@ $(document).ready(function() {
               var activeOffset = $active.offset().top;
 
               // 현재 .section이 다음 .section보다 화면에 더 위에 있으면 active 클래스를 제거
-              if (scrollPosition + windowHeight > activeOffset + 600) {
+              if (scrollPosition + windowHeight > activeOffset + 500) {
                 $active.removeClass('active');
               }
             });
@@ -97,25 +97,6 @@ $(document).ready(function() {
           }
         }
       });
-
-      // footer 상단에 도달하면 .utilWrap을 왼쪽으로 숨기기
-      // if (scrollPosition + $(window).height() >= footerOffset) {
-      //   $('.utilWrap').css({'left' : '-9999px', 'transition' : 'all 2s ease-in-out'}); // .utilWrap을 왼쪽으로 숨기기
-      // } else {
-      //   $('.utilWrap').css({'left' : '-2.292vw', 'transition' : 'all 1s ease-in-out'}); // .utilWrap을 원래 위치로 복귀
-      //   if($(window).width() <= 1440){
-      //       $('.utilWrap').css({'left' : '-4.167vw', 'transition' : 'all 1s ease-in-out'});
-      //   }
-      //   if($(window).width() <= 1024){
-      //       $('.utilWrap').css({'left' : '-6.25vw', 'transition' : 'all 1s ease-in-out'});
-      //   }
-      //   if($(window).width() <= 580){
-      //     $('.utilWrap').css({'left' : '-11.111vw', 'transition' : 'all 1s ease-in-out'});
-      //   }
-      //   if($(window).width() <= 480){
-      //     $('.utilWrap').css({'left' : '-12.5vw', 'transition' : 'all 1s ease-in-out'});
-      //   }
-      // }
   });
 
   // document.querySelector('#intro').addEventListener('loadedmetadata', function(){

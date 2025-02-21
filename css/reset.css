@@ -79,6 +79,22 @@ input:focus, input:focus-visible{outline: none;}
     .small{font-size: 2.4vw;}
     .mini{font-size: 2.3vw;}
 }
+@media all and (max-width: 390px){
+    .h1{font-size: 8.403vw;}
+    .h2{font-size: 6.841vw;}
+    .h3{font-size: 4.106vw;}
+    .big{font-size: 3.734vw;}
+    .medium{font-size: 2.848vw;}
+    .text{font-size: 2.6vw;}
+    .small{font-size: 2.5vw;}
+    .mini{font-size: 2.4vw;}
+}
+@media all and (max-width: 390px){
+    .medium{font-size: 2.948vw;}
+    .text{font-size: 2.7vw;}
+    .small{font-size: 2.6vw;}
+    .mini{font-size: 2.5vw;}
+}
 
 /* color */
 :root{
