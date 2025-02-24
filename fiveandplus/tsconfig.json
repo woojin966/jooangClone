@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "esnext",                // ESNext로 컴파일
+      "module": "esnext",                // ESNext 모듈 시스템 사용
+      "moduleResolution": "node",        // 모듈 해석을 Node 방식으로 설정
+      "strict": true,                    // 엄격한 타입 검사를 적용
+      "esModuleInterop": true,           // ES 모듈 호환성 설정
+      "skipLibCheck": true,              // 라이브러리 타입 검사 건너뛰기
+      "allowSyntheticDefaultImports": true // 기본 import 허용
+    },
+    "include": [
+      "src/**/*.ts",                     // `src` 폴더 내 `.ts` 파일들
+      "src/**/*.d.ts",                   // `src` 폴더 내 `.d.ts` 타입 정의 파일들
+      "node_modules/jquery"              // `node_modules/jquery`를 타입에 포함
+    ],
+    "exclude": [
+      "node_modules"                     // `node_modules`는 제외
+    ]
+  }

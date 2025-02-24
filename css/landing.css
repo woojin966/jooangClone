@@ -1,0 +1,415 @@
+@import 'reset.css';
+@import 'style.css';
+
+body.no_scroll{overflow-y: hidden;}
+
+.body_wrapper{ width: 100%; min-height: 100dvh; font-family: 'Pretendard',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
+
+header{position: fixed; top: 4.167vw; left: 4.167vw; z-index: 9; display: flex; width: calc(100% - 8.333vw);}
+/* logo, 패밀리사이트 버튼과 레어 */
+.heading{display: flex; gap: 2.083vw;}
+.logo img{height: 1.25vw;}
+.ham_btn{width: 0.833vw; height: 0.833vw;}
+.ham_btn .hover{top: 0.208vw; left: 0.208vw; width: 0.417vw; height: 0.417vw;}
+/* menu layer */
+.layerMenu{position: fixed; top: 0; left: 0; z-index: 10; display: none; width: 100%; height: 100dvh; padding: 3.125vw 4.167vw; background-color: #fff;}
+.layerMenu.on{display: block;}
+.btnMenu_close{width: 1.25vw; height: 1.25vw;}
+.navWrap_mo{display: none;}
+.layerMenu_area{display: flex; gap: 5.208vw; margin-top: 5.208vw;}
+.menu_list{display: flex; flex-direction: column; gap: 1.042vw;}
+.menu_list ul{display: flex; flex-direction: column; gap: 0.625vw; margin-top: 1.042vw;}
+
+/* gnb */
+.titleNavBox{display: flex; gap: 2.083vw; margin-left: 8.333vw;}
+.titleNavBox .nav{position: relative; color: var(--gray); transition: all ease-out .2s;}
+.titleNavBox .nav:hover{color: #000; }
+.titleNavBox .nav::before{content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #000; }
+/* rnb */
+.titleNavBox .nav:hover::before{width: 100%;}
+.navWrap{position: absolute; top: 0; right: 0; display: flex; flex-direction: column; gap: 0.417vw; text-align: right;}
+.navWrap .menu{font-size: 1.458vw;}
+/* utilwrap */
+.utilWrap{position: fixed; bottom: 8.75vw; left: -2.083vw; z-index: 9; display: flex; align-items: center; gap: 2.083vw; transform: rotate(-90deg);}
+.utilWrap .lang{display: flex; flex-direction: column;}
+.lang a{color: var(--gray);}
+.lang a.on{color: #000;}
+.social span{width: 1.25vw; height: 1.25vw; background-color: orange;}
+
+/* main content */
+section{position: sticky; top: 0; left: 0; width: 100%; height: 100dvh; min-height: 50.417vw; margin-bottom: 100dvh; z-index: 5; overflow: hidden;}
+section:first-child, section:last-child{margin-bottom: 0;}
+.section.cont{background-color: #fff;}
+.layer{display: flex; flex-direction: column; width: 100%; height: 100dvh; align-items: center; justify-content: center; z-index: 8; gap: 35%; position: absolute; transition:  all .4s ease-in-out; color: #000; background-color: transparent;}
+.fake_div{width: 100%; height: 200dvh;}
+.sec1{clip-path: inset(35% 24% 35% 24%); transition: clip-path 0.5s ease; }
+.sec1 video{width: 100%; height: 100%; object-fit: cover;}
+.section.cont{display: flex;}
+.section.cont .text_box .medium{padding-top: 1.042vw;}
+.section.cont .text_box .h1, .section.cont .text_box .h2, .section.cont .text_box .h3, .section.cont .text_box .medium{position: relative; z-index: -1; overflow: hidden; transform: translateY(100%); /*opacity: 0;*/ visibility: hidden; transition: transform 0.2s ease-in-out, visibility 0.4s ease-in-out; background-color: #fff;}
+.section.cont.active .h1, .section.cont.active .h2, .section.cont.active .text_box .h3, .section.cont.active .text_box .medium{/*font-size: 4.375vw;*/ transform: translateY(0); /*opacity: 1;*/ visibility: visible;}
+.section.cont.even .text_box{right: 0; width: 52%; padding: 10.417vw 6.25vw 0 10.417vw;}
+.section.cont.odd .text_box{left: 0; width: 48%; padding: 10.417vw 10.417vw 0 6.25vw;}
+.section.cont.even .img_box{right: 0; width: 48%;}
+.section.cont.odd .img_box{left: 0; width: 52%;}
+.section.cont .img_box img{width: 100%; height: 100%; object-fit: cover;}
+
+.section.other{flex-direction: column; gap: 5.208vw; justify-content: space-between;}
+.section.other .text_box{padding: 10.417vw 6.25vw 0; gap: 0.625vw;}
+.card_box{ padding: 0 7.292vw 5.208vw;}
+.card_box ul{display: flex; justify-content: flex-end; gap: 1.042vw;}
+.card_box li{display: flex; flex-direction: column; gap: 1.042vw; border-top: 1px solid #000; width: 20%;}
+.card_box li > p{margin-top: 0.625vw;}
+.card_box li img{margin-top: 0.417vw; width: 100%; height: 11.458vw; object-fit: cover; display: block; opacity: 0; /* 처음에 보이지 않음 */ transform: rotateX(180deg); /* 초기 상태: 90도 회전 */ transition: transform 1s ease-out, opacity .2s ease-out; /* 애니메이션 */ transform-style: preserve-3d; /* 3D 효과 유지 */ backface-visibility: hidden;}
+.section.active .card_box li img{opacity: 1; /* 보이도록 설정 */ transform: rotateX(0deg);}
+
+.card_box li:first-child img{object-position: center 44%;}
+.card_box li:nth-child(2) img{object-position: center 40%;}
+
+.section.center{flex-direction: column; justify-content: space-between; align-items: center;}
+.section.center .text_box{padding: 10.417vw 4.167vw 0; text-align: center;}
+.section.center .img_list_box{width: 100%; height: 15.625vw; overflow-x: auto; overflow-y: hidden; scroll-behavior: smooth;}
+.img_list_box::-webkit-scrollbar {height: 2px;}
+.img_list_box::-webkit-scrollbar-track {background-color: #E47E3C;}
+.img_list_box::-webkit-scrollbar-thumb {background-color: #000; border-radius: 0;}
+.img_list_box ul{display: flex; align-items: center; gap: 0.26vw; width: max-content; height: 100%;}
+.img_list_box li{height: 100%;}
+.img_list_box ul img{height: 100%; object-fit: cover;}
+.section.center .showroominfo_box{display: flex; align-items: center; gap: 2.083vw;}
+.showroominfo_box > div{display: flex; flex-direction: column; gap: 0.625vw;}
+.showroombooking_btn{display: flex; align-items: center; justify-content: center; gap: 0.417vw; padding: 0.625vw 1.042vw; width: 12.5vw; border: 1px solid #000;}
+
+/* footer */
+footer{display: flex; flex-direction: column; gap: 6.25vw; padding: 4.167vw;}
+.footerMenu{display: flex; gap: 5.208vw;}
+strong.dep1{margin-bottom: 0.625vw;}
+.footerBtm{display: flex; justify-content: space-between; align-items: flex-start;}
+.footerCopy{display: flex; gap: 1.042vw; align-items: flex-end;}
+.footerCopy .logo{text-align: center;}
+.footerCopy .logo img{width: auto; height: 1.771vw; margin-bottom: 0.208vw;}
+.footerEtc{display: flex; flex-wrap: wrap; width: 40%; gap: 0.417vw 0.625vw;}
+
+@media all and (max-width: 1440px){
+    header{top: 4.167vw; left: 4.167vw; width: calc(100% - 8.333vw);}
+    /* logo, 패밀리사이트 버튼과 레어 */
+    .heading{gap: 2.778vw;}
+    .logo img{height: 1.667vw;}
+    .ham_btn{width: 1.111vw; height: 1.111vw;}
+    .ham_btn .hover{top: 0.278vw; left: 0.278vw; width: 0.556vw; height: 0.556vw;}
+    /* menu layer */
+    .layerMenu{min-height: 41.667vw; padding: 4.167vw 4.167vw;}
+    .btnMenu_close{width: 1.667vw; height: 1.667vw;}
+    .layerMenu_area{gap: 6.944vw; margin-top: 6.944vw;}
+    .menu_list{gap: 1.389vw;}
+    .menu_list ul{gap: 0.833vw; margin-top: 1.389vw;}
+
+    /* gnb */
+    .titleNavBox{gap: 2.778vw; margin-left: 11.111vw;}
+    /* rnb */
+    .navWrap{gap: 0.556vw;}
+    .navWrap .menu{font-size: 1.944vw;}
+    /* utilwrap */
+    .utilWrap{bottom: 11.667vw; left: -4.306vw; gap: 2.778vw;}
+    .social span{width: 1.667vw; height: 1.667vw; background-color: orange;}
+
+    /* main content */
+    section{min-height: 41.667vw;}
+    .sec1{clip-path: inset(35% 21% 35% 24%);}
+    .layer{gap: 32%;}
+
+    .section.cont.even .text_box{width: 52%; padding: 12.5vw 4.167vw 0 9.722vw;}
+    .section.cont.odd .text_box{width: 48%; padding: 12.5vw 9.722vw 0 4.167vw;}
+    .section.cont.even .img_box{width: 48%;}
+    .section.cont.odd .img_box{width: 52%;}
+
+    .section.other{gap: 6.944vw;}
+    .section.other .text_box{padding: 12.5vw 8.333vw 0; gap: 0.833vw;}
+    .card_box{padding: 0 8.333vw 6.944vw;}
+    .card_box ul{gap: 1.389vw;}
+    .card_box li{gap: 1.389vw; width: 20%;}
+    .card_box li > p{margin-top: 0.833vw;}
+    .section.active .card_box li img{margin-top: 0.556vw; height: 15.278vw;}
+
+    .section.center .text_box{padding: 12.5vw 4.167vw 0;}
+    .section.center .img_list_box{height: 19.444vw;}
+    .section.center .showroominfo_box{gap: 2.778vw;}
+    .showroominfo_box > div{gap: 0.833vw;}
+    .showroombooking_btn{gap: 0.556vw; padding: 0.833vw 1.389vw; width: 16.667vw;}
+
+    /* footer */
+    footer{gap: 8.333vw; padding: 4.167vw;}
+    .footerMenu{gap: 6.944vw;}
+    strong.dep1{margin-bottom: 0.833vw;}
+    .footerCopy{gap: 1.389vw;}
+    .footerCopy .logo img{height: 2.361vw; margin-bottom: 0.278vw;}
+    .footerEtc{width: 40%; gap: 0.556vw 0.833vw;}
+}
+@media all and (max-width: 1280px){
+    header{top: 4.688vw; left: 4.688vw; width: calc(100% - 9.375vw);}
+    /* logo, 패밀리사이트 버튼과 레어 */
+    .heading{gap: 3.125vw;}
+    .logo img{height: 1.875vw;}
+    .ham_btn{width: 1.25vw; height: 1.25vw;}
+    .ham_btn .hover{top: 0.313vw; left: 0.313vw; width: 0.625vw; height: 0.625vw;}
+    /* menu layer */
+    .layerMenu{min-height: 62.5vw; padding: 4.688vw 6.25vw;}
+    .btnMenu_close{width: 1.875vw; height: 1.875vw;}
+    .layerMenu_area{gap: 7.813vw; margin-top: 7.813vw;}
+    .menu_list{gap: 1.563vw;}
+    .menu_list ul{gap: 0.938vw; margin-top: 1.563vw;}
+
+    /* gnb */
+    .titleNavBox{gap: 3.125vw; margin-left: 9.375vw;}
+    /* rnb */
+    .navWrap{gap: 0.625vw;}
+    .navWrap .menu{font-size: 2.188vw;}
+    /* utilwrap */
+    .utilWrap{bottom: 13.125vw; left: -4.844vw; gap: 3.125vw;}
+    .social span{width: 1.875vw; height: 1.875vw; background-color: orange;}
+
+    /* main content */
+    section{min-height: 62.5vw;}
+
+    .section.cont.even .text_box{width: 60%; padding: 14.063vw 4.375vw 0 12.5vw;}
+    .section.cont.odd .text_box{width: 60%; padding: 14.063vw 12.5vw 0 4.375vw;}
+    .section.cont.even .img_box{width: 40%;}
+    .section.cont.odd .img_box{width: 40%;}
+
+    .section.other{gap: 4.688vw;}
+    .section.other .text_box{padding: 10.938vw 10.938vw 0; gap: 0.938vw;}
+    .card_box{padding: 0 7.813vw 4.688vw;}
+    .card_box ul{gap: 1.563vw;}
+    .card_box li{gap: 1.563vw; width: 26%;}
+    .card_box li > p{margin-top: 0.938vw;}
+    .section.active .card_box li img{margin-top: 0.625vw; height: 14.063vw;}
+
+    .section.center .text_box{padding: 10.938vw 4.688vw 0;}
+    .section.center .img_list_box{height: 18.75vw}
+    .section.center .showroominfo_box{gap: 3.125vw;}
+    .showroominfo_box > div{gap: 0.938vw;}
+    .showroombooking_btn{gap: 0.625vw; padding: 0.938vw 1.563vw; width: 18.75vw;}
+
+    /* footer */
+    footer{gap: 9.375vw; padding: 6.25vw;}
+    .footerMenu{gap: 7.813vw;}
+    strong.dep1{margin-bottom: 0.938vw;}
+    .footerCopy{gap: 1.563vw;}
+    .footerCopy .logo img{height: 2.656vw; margin-bottom: 0.313vw;}
+    .footerEtc{width: 40%; gap: 0.625vw 0.938vw;}
+}
+@media all and (max-width: 1024px){
+    .mo_hidden{display: none;}
+    body{line-height: 1.34;}
+
+    header{top: 5.859vw; left: 5.859vw; width: calc(100% - 11.719vw);}
+    /* logo, 패밀리사이트 버튼과 레어 */
+    .heading{gap: 3.906vw;}
+    .logo img{height: 2.344vw;}
+    .ham_btn{width: 1.563vw; height: 1.563vw;}
+    .ham_btn .hover{top: 0.391vw; left: 0.391vw; width: 0.781vw; height: 0.781vw;}
+    /* menu layer */
+    .layerMenu{min-height: 58.594vw; padding: 5.859vw 7.813vw;}
+    .btnMenu_close{width: 2.344vw; height: 2.344vw;}
+    .layerMenu_area{gap: 9.766vw; margin-top: 9.766vw;}
+    .menu_list{gap: 1.953vw;}
+    .menu_list ul{gap: 1.172vw; margin-top: 1.953vw;}
+
+    /* gnb */
+    .titleNavBox{gap: 3.906vw; margin-left: 11.719vw;}
+    /* rnb */
+    .navWrap{gap: 0.781vw;}
+    .navWrap .menu{font-size: 2.734vw;}
+    /* utilwrap */
+    .utilWrap{bottom: 17.969vw; left: -7.813vw; gap: 3.906vw;}
+    .social span{width: 2.344vw; height: 2.344vw; background-color: orange;}
+
+    /* main content */
+    section{min-height: 58.594vw;}
+
+    .sec1 video{object-position: 52% center;}
+    .layer{gap: 28%;}
+
+    .section.cont{flex-direction: column; justify-content: space-between;}
+    .section.cont .text_box{order: 1; width: 100% !important; padding: 17.578vw 11.719vw 0 !important;}
+    .section.cont .text_box p{word-break: keep-all;}
+    .section.cont .img_box{order: 2; width: 100% !important; height: 60% !important;}
+
+    .section.cont.other{flex-direction: row; align-items: flex-start; gap: 0;}
+    .section.cont.other .text_box{order: 1; padding: 23.438vw 7.813vw 0 11.719vw !important; width: 56vw !important;}
+    .card_box{order: 2; padding: 23.438vw 0 0; width: 44vw !important; height: 100dvh;}
+    .card_box ul{flex-direction: column; justify-content: space-between; gap: 5.859vw; height: 100%; }
+    .card_box li{gap: 3.516vw; width: 100%;}
+    .card_box li > p{margin-top: 1.172vw;}
+    .section.active .card_box li img{height: 22.266vw;}
+    .card_box li:nth-child(2) img{object-position: center 32%;}
+
+    .section.cont.center{display: grid; grid-template-columns: repeat(2, 1fr); align-items: flex-start;}
+    .section.cont.center .text_box{order: 1; grid-column: 1 / 2; width: 56vw !important; padding: 23.438vw 7.813vw 5.859vw 11.719vw !important; text-align: left;}
+    .section.cont.center .text_box p{ gap: 1.953vw;}
+    .section.cont.center .showroominfo_box{order: 2; flex-direction: column; gap: 2.734vw; align-items: flex-start;  width: 56vw; grid-column: 1 / 2; padding: 0 7.813vw 23.438vw 11.719vw !important;}
+    .showroominfo_box > div.btn{flex-direction: column; align-items: center; width: 100%; gap: 1.172vw;}
+    .showroombooking_btn{width: 100%;}
+    .section.cont.center .img_list_box{order: 3; grid-column: 2 / 3; grid-row: 1 / 3; height: 100dvh; width: 44vw;}
+    .img_list_box ul{flex-direction: column; gap: 0.391vw;}
+    .img_list_box li{height: 33.3333%;}
+    .img_list_box ul img{width: 100vw;}
+
+    /* footer */
+    footer{gap: 5.859vw; padding: 5.859vw;}
+    .footerMenu{gap: 9.766vw;}
+    .footerBtm{flex-direction: column; gap: 1.953vw;}
+    .footerCopy{gap: 1.953vw;}
+    .footerCopy .logo img{height: 3.125vw; margin-bottom: 0.391vw;}
+    .footerEtc{width: 100%; gap: 0.781vw;}
+}
+@media all and (max-width: 840px){
+    .utilWrap{bottom: 19.524vw; left: -8.571vw; gap: 4.762vw;}
+    .social span{width: 2.857vw; height: 2.857vw; background-color: orange;}
+
+    .titleNavBox{margin-left: 9.524vw;}
+    .navWrap .menu{font-size: 2.857vw;}
+
+    .layer{gap: 24%;}
+
+    .section.cont .text_box{padding: 21.429vw 11.905vw 0 !important;}
+
+    .section.cont.other .text_box{padding: 28.571vw 7.143vw 0 11.905vw !important;}
+    .section.active .card_box li img{height: 21.429vw;}
+
+    .section.cont.center .text_box{padding: 28.571vw 7.143vw 4.762vw 11.905vw !important;}
+    .section.cont.center .showroominfo_box{padding: 0 7.143vw 28.571vw 11.905vw !important; height: 60dvh;}
+
+    footer{padding: 4.762vw;}
+    .footerCopy .logo img{height: 3.333vw;}
+}
+@media all and (max-width: 768px){
+    header{top: 5.208vw; left: 5.208vw; width: calc(100% - 10.417vw);}
+    .logo img{height: 2.604vw;}
+    .ham_btn{width: 2.083vw; height: 2.083vw;}
+
+    .navWrap .menu{font-size: 2.604vw;}
+
+    .utilWrap{bottom: 20.833vw; left: -9.896vw; gap: 5.208vw;}
+    .social span{width: 3.125vw; height: 3.125vw; background-color: orange;}
+
+    .section.cont .text_box{padding: 20.833vw 13.021vw 0 !important;}
+
+    .section.cont.other .text_box{padding: 26.042vw 7.813vw 0 13.021vw !important;}
+    .card_box{padding: 26.042vw 0 0;}
+    .card_box ul{gap: 5.208vw;}
+    .card_box li{gap: 3.125vw;}
+    .section.active .card_box li img{height: 21.354vw;}
+
+    .section.cont.center .text_box{padding: 26.042vw 7.813vw 5.208vw 13.021vw !important;}
+    .section.cont.center .showroominfo_box{padding: 0 7.813vw 26.042vw 13.021vw !important;}
+
+    footer{gap: 5.208vw; padding: 4.167vw 5.208vw;}
+    .footerMenu{gap: 10.417vw;}
+}
+@media all and (max-width: 580px){
+    .navWrap{gap: 0.69vw;}
+    .navWrap .menu{font-size: 2.759vw;}
+    .titleNavBox{gap: 3.448vw; margin-left: 6.897vw;}
+
+    .utilWrap{bottom: 22.069vw; left: -9.876vw; gap: 4.828vw;}
+    .social span{width: 3.448vw; height: 3.448vw; background-color: orange;}
+
+    .section.cont .text_box{padding: 17.241vw 10.345vw 0 !important;}
+
+    .section.cont.other .text_box{padding: 17.241vw 6.897vw 0 10.345vw !important;}
+    .card_box{padding: 22.069vw 0 0;}
+    .card_box ul{gap: 5.517vw;}
+    .card_box li{gap: 2.759vw;}
+    .card_box li > p{margin-top: 1.379vw;}
+
+    .section.active .card_box li img{height: 20.69vw;}
+
+    .section.cont.center .text_box{padding: 22.069vw 10.345vw 5.517vw 10.345vw !important;}
+    .section.cont.center .showroominfo_box{padding: 0 10.345vw 22.069vw 10.345vw !important;}
+
+    footer{gap: 5.517vw; padding: 3.448vw 4.828vw;}
+    .footerMenu{gap: 10.345vw;}
+    .footerBtm{gap: 2.069vw;}
+    .footerCopy{gap: 2.069vw;}
+    .footerCopy .logo img{margin-bottom: 0; height: 3.959vw;}
+}
+@media all and (max-width: 480px){
+    header{top: 5.833vw; left: 5vw; width: calc(100% - 10vw); justify-content: space-between;}
+    .titleNavBox{gap: 5.833vw; margin-left: 8.333vw;}
+    .heading{gap: 3.333vw;}
+    .logo img{height: 4.167vw;}
+    .ham_btn{width: 3.333vw; height: 3.333vw;}
+    .navWrap{display: none;}
+
+    .layerMenu{padding: 5.833vw 5vw;}
+    .btnMenu_close{width: 4.167vw; height: 4.167vw;}
+    .layerMenu_area{gap: 4.167vw 2.5vw; margin-top: 8.333vw; flex-wrap: wrap;}
+    .navWrap_mo{display: flex; flex-direction: column; gap: 2.5vw; width: 100%;}
+    .navWrap_mo a{font-size: 5.833vw;}
+    .menu_list{gap: 2.5vw; flex-direction: row;}
+    .menu_list ul{display: none;}
+
+    .utilWrap{bottom: 25.833vw; left: -14.167vw; gap: 5.833vw;}
+    .social span{width: 4.167vw; height: 4.167vw;}
+
+    .sec1{/*clip-path: inset(31% 28% 28% 28%);*/ clip-path: inset(28%);}
+    .sec1 video{position: absolute; top: -10dvh; left: -57.805vw; width: 100vh; height: 120dvh; transform: rotate(90deg);}
+
+    .layer{gap: 46%;}
+
+    .section.cont .text_box{display: flex; flex-direction: column; gap: 1.667vw; padding: 23.333vw 5vw 0 8.333vw !important;}
+    .section.cont .text_box .medium{padding-top: 0;}
+    .section.cont .img_box{height: 56dvh !important;}
+
+    .section.cont.other{flex-direction: column; gap: 8.333vw; justify-content: flex-start;}
+    .section.cont.other .text_box{padding: 20.833vw 8.333vw 0 !important; width: 100% !important;}
+    .card_box{align-self: flex-end; padding: 0 0 0 8.333vw; margin-right: 8.333vw; width: 60% !important; height: max-content; overflow-y: auto; scroll-behavior: smooth;}
+    .card_box ul{ gap: 7.833vw; }
+    .card_box li{width: 100%; gap: 3.333vw;}
+    .card_box li > p{margin-top: 1.667vw;}
+    .card_box li > p .mo_hidden{display: block;}
+    .section.active .card_box li img{margin-top: 0.833vw; height: 40vw;}
+
+    .section.cont.center{display: flex; gap: 8.333vw; justify-content: flex-start;}
+    .section.cont.center .text_box{padding: 20.833vw 8.333vw 0 !important; width: 100% !important;}
+    .section.cont.center .showroominfo_box{padding: 0 8.333vw !important; width: 100%; gap: 4.167vw;}
+    .showroominfo_box > div.btn{gap: 1.667vw;}
+    .showroombooking_btn{gap: 1.667vw; padding: 1.667vw 2.5vw; height: 11.333vw;}
+    .showroombooking_btn img{width: 3.333vw; height: 3.333vw;}
+    .showroominfo_box > div.info{gap: 1.667vw;}
+    .section.cont.center .img_list_box{width: 100%; height: 125vw;}
+    .img_list_box ul{flex-direction: row; justify-content: flex-start;}
+    .img_list_box li{height: 100%;}
+    .img_list_box ul img{ width: 100%;}
+
+    footer{gap: 8.517vw; padding: 6.448vw 5.828vw;}
+    .footerMenu{justify-content: center; gap: 12vw;}
+    .footerBtm{gap: 2.8vw;}
+    .footerCopy{flex-direction: column; align-items: center; text-align: center; width: 100%; gap: 2.4vw;}
+    .footerCopy .logo img{height: 5.5vw;}
+    .footerEtc{justify-content: center; gap: 0.8vw 1.8vw;}
+    @media all and (max-height: 1000px){
+        .section.cont .img_box{height: 64dvh !important;}
+    }
+    @media all and (max-height: 800px){
+        .section.cont .img_box{height: 60dvh !important;}
+    }
+    @media all and (max-height: 700px){
+        .section.cont .img_box{height: 56dvh !important;}
+    }
+    @media all and (max-height: 600px){
+        .section.cont .img_box{height: 52dvh !important;}
+
+    }
+}
+/*
+@media all and (max-width: 390px){
+    .card_box ul{ gap: 28px; }
+    .card_box li{width: 100%; gap: 16px;}
+    .card_box li > p{margin-top: 8px;}
+}
+@media all and (max-width: 360px){
+    .card_box ul{ gap: 28px; }
+    .card_box li{width: 100%; gap: 16px;}
+    .card_box li > p{margin-top: 8px;}
+} */

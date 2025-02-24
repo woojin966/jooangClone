@@ -1,0 +1,14 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/* color */
+:root{
+    --gray:#bdbdbf;
+}
+
+/* common */
+.mHide{display: none;}
+.wHide{display: block;}
+@media all and (max-width: 480px){
+    .mHide{display: block;}
+    .wHide{display: none;}
+}
