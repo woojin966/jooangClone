@@ -2,9 +2,7 @@
 
 
 <template>
-	<div class="body_wrapper">
-		<Landing></Landing>
-  	</div>
+    <Landing></Landing>
 </template>
 
 <script>

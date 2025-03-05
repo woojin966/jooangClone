@@ -1,4 +1,5 @@
 <template>
+    <div class="body_wrapper">
     <!-- header -->
     <header id="header">
             <div class="heading">
@@ -401,6 +402,7 @@
             	</ul>
         	</div>
     	</footer>
+    </div>
 </template>
 <script>
     import '../assets/landing'
