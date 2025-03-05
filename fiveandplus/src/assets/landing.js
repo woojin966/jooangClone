@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var lastScrollTop = 0;
+
     $('.ham_btn').on('click', function(){
         $('.layerMenu').addClass('on');
         $('body').addClass('no_scroll');
@@ -10,7 +12,7 @@ $(document).ready(function() {
 
     $('.layer').css({'color' : '#000'});
     $(window).scroll(function() {
-      var scrollPosition = $(this).scrollTop(); // 현재 스크롤 위치
+      var scrollPosition = $(window).scrollTop(); // 현재 스크롤 위치
       var sec1Height = $('.sec1').height(); // sec1의 높이
       var footerOffset = $('footer').offset().top; // footer의 상단 위치
       var windowHeight = $(window).height(); // 윈도우 높이
@@ -22,13 +24,13 @@ $(document).ready(function() {
       var insetTop = (35 - (35 * scrollRatio)) + "%";
       var insetBottom = (35 - (35 * scrollRatio)) + "%";
       var insetLeft = (24 - (24 * scrollRatio)) + "%";
-      var insetRight = (21 - (21 * scrollRatio)) + "%";
+      var insetRight = (24 - (24 * scrollRatio)) + "%";
       var layerGap = (35 - (35 * scrollRatio)) + "%";
       if($(window).width() <= 1440){
           var insetTop = (35 - (35 * scrollRatio)) + "%";
           var insetBottom = (35 - (35 * scrollRatio)) + "%";
           var insetLeft = (24 - (24 * scrollRatio)) + "%";
-          var insetRight = (21 - (21 * scrollRatio)) + "%";
+          var insetRight = (24 - (24 * scrollRatio)) + "%";
           var layerGap = (32 - (32 * scrollRatio)) + "%";
       }
       if($(window).width() <= 1024){
@@ -97,18 +99,69 @@ $(document).ready(function() {
           }
         }
       });
+
+      // 스크롤을 내리면 .utilwrap을 사라지게 함
+      if (scrollPosition > lastScrollTop) {
+        // 스크롤 내림
+        $('.utilWrap').stop().animate({
+          left: '-9999px'
+        }, 200);
+      } else {
+        // 스크롤 올림
+        $('.utilWrap').stop().animate({
+          left: '-2.083vw'
+        }, 200);
+        if($(window).width() <= 1440){
+          $('.utilWrap').stop().animate({
+            left: '-4.306vw'
+          }, 200);
+        }
+        if($(window).width() <= 1280){
+          $('.utilWrap').stop().animate({
+            left: '-4.844vw'
+          }, 200);
+        }
+        if($(window).width() <= 1024){
+          $('.utilWrap').stop().animate({
+            left: '-7.813vw'
+          }, 200);
+        }
+        if($(window).width() <= 840){
+          $('.utilWrap').stop().animate({
+            left: '-8.571vw'
+          }, 200);
+        }
+        if($(window).width() <= 768){
+          $('.utilWrap').stop().animate({
+            left: '-9.896vw'
+          }, 200);
+        }
+        if($(window).width() <= 580){
+          $('.utilWrap').stop().animate({
+            left: '-9.876vw'
+          }, 200);
+        }
+        if($(window).width() <= 480){
+          $('.utilWrap').stop().animate({
+            left: '-14.167vw'
+          }, 200);
+        }
+      }
+
+      // 마지막 스크롤 위치 업데이트
+      lastScrollTop = scrollPosition;
   });
 
-  // document.querySelector('#intro').addEventListener('loadedmetadata', function(){
-  //     this.currentTime = 3;
-  //     this.play();
+  document.querySelector('#intro').addEventListener('loadedmetadata', function(){
+      this.currentTime = 3;
+      this.play();
+  });
+
+  // document.querySelector('#intro').addEventListener("play", function() {
+  //   setTimeout(function() {
+  //     document.querySelector('#intro').pause();
+  //   }, 6000); // 4초 후에 일시정지
   // });
-
-  document.querySelector('#intro').addEventListener("play", function() {
-    setTimeout(function() {
-      document.querySelector('#intro').pause();
-    }, 6000); // 4초 후에 일시정지
-  });
 
   // 비디오가 로드될 때 자동으로 재생 시작
   document.querySelector('#intro').play();

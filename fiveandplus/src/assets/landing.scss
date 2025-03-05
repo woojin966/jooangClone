@@ -210,31 +210,31 @@ header{
             &.on{color: #000;}
         }
     }
-    .social span{width: 1.25vw; height: 1.25vw; background-color: orange;}
+    .social span{width: 1.25vw; height: 1.25vw; background-color: transparent;}
     @media all and (max-width: 1440px){
         bottom: 11.667vw; left: -4.306vw; gap: 2.778vw;
-        .social span{width: 1.667vw; height: 1.667vw; background-color: orange;}
+        .social span{width: 1.667vw; height: 1.667vw;}
     }
     @media all and (max-width: 1280px){
         /* utilwrap */
         bottom: 13.125vw; left: -4.844vw; gap: 3.125vw;
-        .social span{width: 1.875vw; height: 1.875vw; background-color: orange;}
+        .social span{width: 1.875vw; height: 1.875vw; }
     }
     @media all and (max-width: 1024px){
         bottom: 17.969vw; left: -7.813vw; gap: 3.906vw;
-        .social span{width: 2.344vw; height: 2.344vw; background-color: orange;}
+        .social span{width: 2.344vw; height: 2.344vw; }
     }
     @media all and (max-width: 840px){
         bottom: 19.524vw; left: -8.571vw; gap: 4.762vw;
-        .social span{width: 2.857vw; height: 2.857vw; background-color: orange;}
+        .social span{width: 2.857vw; height: 2.857vw;}
     }
     @media all and (max-width: 768px){
         bottom: 20.833vw; left: -9.896vw; gap: 5.208vw;
-        .social span{width: 3.125vw; height: 3.125vw; background-color: orange;}
+        .social span{width: 3.125vw; height: 3.125vw; }
     }
     @media all and (max-width: 580px){
         bottom: 22.069vw; left: -9.876vw; gap: 4.828vw;
-        .social span{width: 3.448vw; height: 3.448vw; background-color: orange;}
+        .social span{width: 3.448vw; height: 3.448vw; }
     }
     @media all and (max-width: 480px){
         bottom: 25.833vw; left: -14.167vw; gap: 5.833vw;
@@ -344,7 +344,8 @@ section{
             ul{
                 display: flex; justify-content: flex-end; gap: 1.042vw;
                 li{
-                    display: flex; flex-direction: column; gap: 1.042vw; border-top: 1px solid #000; width: 20%;
+                    position: relative; display: flex; flex-direction: column; gap: 1.042vw; border-top: 1px solid #000; width: 20%;
+                    .trigger_btn{position: absolute; top: 0; left: 0; width: 1000%; height: 100%; cursor: pointer; z-index: 1;}
                     > p{margin-top: 0.625vw;}
                     img{margin-top: 0.417vw; width: 100%; height: 11.458vw; object-fit: cover; display: block; opacity: 0; /* 처음에 보이지 않음 */ transform: rotateX(180deg); /* 초기 상태: 90도 회전 */ transition: transform 1s ease-out, opacity .2s ease-out; /* 애니메이션 */ transform-style: preserve-3d; /* 3D 효과 유지 */ backface-visibility: hidden;}
                     &:first-child img{object-position: center 44%;}
