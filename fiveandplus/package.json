@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://fiple-redesign.github.io/my-project",
+  "homepage": "https://fiple-redesign.github.io/jooangClone",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
