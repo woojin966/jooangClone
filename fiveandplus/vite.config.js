@@ -6,6 +6,10 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/fiveandplus/',  // 예: '/my-vue-project/'
+  build: {
+    outDir: 'dist',  // 빌드 결과물은 dist 폴더에 출력
+  },
   plugins: [
     vue(),
     vueDevTools(),
